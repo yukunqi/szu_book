@@ -1,0 +1,69 @@
+
+
+<view wx:for="{{book_data}}" wx:key="{{item.id}}" id='{{index}}' class='container'>
+
+<view class='book_image'>
+<image src='{{item.images.large}}'></image>
+</view>
+<view style='font-size:1.3rem;'>{{item.title}}</view>
+<view style='height:20rpx;'></view>
+<view style='font-size:1.3rem;'>{{item.author}}</view>
+<view class='middle'>
+
+<view style='flex:1'>
+<view>出版社: {{item.publisher}}</view>
+<view>价格: {{item.price}}</view>
+</view>
+
+<view style='width:20%'></view>
+
+<view style='flex:1'>
+<view>豆瓣评分:{{item.rating.average}}</view>
+<view>评分人数:{{item.rating.numRaters}}</view>
+</view>
+
+</view>
+
+<view class='tagList'>
+<view wx:for="{{item.tags}}" >
+<view class="it">{{item.name}}</view>
+</view>
+</view>
+
+
+<view wx:if="{{item.author_intro.length >= 200 && intro_hide}}" class='author_intro_hid'>
+<text style='color: #a3a3a3'>作者简介:\n\n</text>
+<text>{{item.author_intro}}</text>
+</view>
+<view wx:else class='author_intro'>
+<text style='color: #a3a3a3'>作者简介:\n\n</text>
+<text>{{item.author_intro}}</text>
+</view>
+<text wx:if="{{item.author_intro.length >= 200 && intro_hide}}" style='color:#62b900' data-tag="intro" bindtap="expand">展开</text>
+<text wx:elif="{{item.author_intro.length >= 200 && ! intro_hide}}" style=' color:#62b900' data-tag="intro" bindtap="expand">收缩</text>
+
+
+<view wx:if="{{item.summary.length >= 200 && summary_hide}}" class='author_intro_hid'>
+<text style='color: #a3a3a3'>内容简介:\n\n</text>
+<text>{{item.summary}}</text>
+</view>
+<view wx:else class='author_intro'>
+<text style='color: #a3a3a3'>内容简介:\n\n</text>
+<text>{{item.summary}}</text>
+</view>
+<text wx:if="{{item.summary.length >= 200 && summary_hide}}" style=' color:#62b900' bindtap="expand" data-tag="summary">展开</text>
+<text wx:elif="{{item.summary.length >= 200 && ! summary_hide}}" style=' color:#62b900' bindtap="expand" data-tag="summary" >收缩</text>
+
+<view class='btn_add'>
+<button class="weui-btn mini-btn" 
+type="primary" 
+size="mini" 
+plain='true'
+disabled='{{disabled}}'
+catchtap='sendBookData'>加入书籍</button>
+</view>
+
+
+</view>
+
+

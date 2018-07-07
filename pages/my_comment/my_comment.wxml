@@ -1,0 +1,40 @@
+<view class='comment'>
+<view class="main" wx:for="{{comment_arr}}" key="{{item.id}}">
+<view style='display:flex;'>
+<view><image src='{{item.avatarUrl}}'></image></view>
+<view class='name'><text>{{item.nickName}}</text></view>
+<view style='width:40%;'></view>
+<view class='like' hover-class='item-operation-like-scale' id='{{index}}' bindtap="toCollect">
+<image src="{{item.like?'../../icons/like-fill.svg':'../../icons/like.svg'}}">
+</image>
+<text class="number {{ item.like ? 'active' : '' }}">{{item.likes_num}}</text>
+</view>
+</view>
+
+<view class='content'><text>{{item.content}}</text></view>
+<view class='book_info' id='{{index}}' bindtap='move'>
+<view style='display:flex'>
+<view class='photo'><image src='{{item.book_image}}'></image></view>
+<view class='book_info_content'>
+<view>{{item.book_name}}</view>
+<view>{{item.book_author}}</view>
+</view>
+</view>
+
+</view>
+<view class='time'><text>{{item.comment_time}}</text></view>
+<view class='delete' bindtap='delete_comment' id='{{index}}'><image src='../../icons/delete.svg'></image></view>
+<view style='margin-top:60rpx; height:10rpx;'></view>
+
+</view>
+
+  <view class="loading" hidden="{{!searchLoading}}">
+  <view style='background-color: whitesmoke; height: 1px; margin-bottom:20px;'></view>
+  正在载入更多...
+  </view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">
+  已加载全部
+  </view> 
+  
+</view>
+

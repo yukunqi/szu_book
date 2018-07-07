@@ -1,0 +1,150 @@
+/* pages/book_more_comment/book_more_comment.wxss */
+
+.loading{  
+  padding: 10rpx;  
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+  color: #333;
+}  
+.loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+  background-image: url(../../icons/loading1.png) no-repeat;  
+  background-size: contain;  
+  animation: rotate 1s linear infinite;  
+}  
+.loading.complete:before{  
+  display: none;  
+}  
+
+
+
+.nav-1{  
+  flex: none;  
+  display: flex;   
+  background: #fff;  
+  background-color: RGB(247, 247, 247);
+  height: 80rpx;
+}
+
+.navbar{  
+  display:flex;
+  background: #fff; 
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 0 0 100%; 
+}  
+.navbar .item{  
+  position: relative;   
+  text-align: center;  
+  font-size: 30rpx;
+  line-height: 80rpx;  
+  color: gray;
+  width: 50%;
+  display: inline-block;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}  
+.navbar .item.active{  
+  color: #FFCC00;  
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: #FFCC00;  
+}  
+
+.comment{
+  width: 100%;
+}
+
+
+.comment .line{
+  background-color: whitesmoke;
+  height: 1px;
+}
+
+
+
+.comment .main{
+  width: 100%;
+}
+
+.comment .main image{
+  width: 80rpx;
+  height: 80rpx;
+  border: 0 solid #ff0000;
+  border-radius: 100rpx;
+  margin-left:40rpx;
+}
+
+.comment .main .name{
+  margin-left: 30rpx;
+  width: 50%;
+  word-break: break-all;
+}
+
+.comment .main .content{
+  margin-left: 150rpx;
+  word-break: break-all;
+  width: 60%;
+  font-size: 16px;
+  line-height: 28px;
+  color: #333;
+  text-align: justify;
+}
+
+.comment .main .time{
+  margin-top: 20rpx;
+  margin-left: 150rpx;
+  width: 60%;
+}
+
+.comment .main .like{
+  display: flex;
+  width: 20%;
+}
+
+.item-operation-like-scale{
+  animation: clickAnimation 300ms ease;
+}
+
+.comment .main .like .number{ 
+  margin-left: 8px;
+  color: #999;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: bold;
+}
+
+ .comment .main .like .number .active {
+     color: #FA6570;
+}
+.comment .main .like image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

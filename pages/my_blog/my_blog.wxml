@@ -1,0 +1,78 @@
+
+<view class='comment'>
+
+<view wx:for="{{blogList}}"
+ wx:key="{{item.id}}" 
+ id="{{blog_index}}" 
+ bindtap='move_detail'
+ wx:for-index="blog_index">
+<view class='main'>
+<view style='display:flex; width:100%'>
+<view class='user-avatar'><image src='{{item.avatarUrl}}'></image></view>
+<view class='name'>
+<text>{{item.nickName}}</text>
+<view class='time'><text>{{item.comment_time}}</text></view>
+</view>
+</view>
+
+<view class='list-item-body'>
+<view class='content'><text>{{item.content}}</text></view>
+<view class="list-item-body-images" wx:if="{{ item.images.length !== 0 }}">
+  <image
+    wx:for-item="book"
+    wx:for-index="book_index"
+    wx:for="{{ item.link_books }}"
+    wx:key="{{ i }}"
+    catchtap='bookDetail'
+    data-blog_index='{{blog_index}}'
+    data-book_index='{{book_index}}'
+    src="{{ book.book_image }}"
+    class="list-item-body-image"
+    mode="aspectFill">
+  </image>
+</view>
+</view>
+
+<!-- Blog Operations -->
+<view class="list-item-operations">
+  <view
+    hover-class="list-item-operation-like-scale"
+    class="list-item-operation-like"
+    catchtap='toCollect'
+    id='{{blog_index}}'>
+    <image
+      class="list-item-operation-icon"
+      src="{{ item.like ? '../../icons/like-fill.svg' : '../../icons/like.svg' }}"></image>
+    <text class="number {{ item.like ? 'active' : '' }}" wx:if="{{ item.likes_num !== 0 }}">{{ item.likes_num }}</text>
+  </view>
+  <view
+    class="list-item-operation-comment">
+    <image class="list-item-operation-icon" src="../../icons/comment.svg"></image>
+    <text class="number" wx:if="{{ item.commentNum !== 0 }}">{{ item.commentNum }}</text>
+  </view>
+  <view
+    class="list-item-operation-more"
+    catchtap='showMore'
+    id='{{blog_index}}'
+    wx:if="{{ item.isAdmin || item.isAuthor }}">
+    <image
+      class="list-item-operation-icon"
+      src="../../icons/more.svg"></image>
+  </view>
+</view>
+
+</view>
+
+<view wx:if="{{blog_index!=blogList.length-1}}" style='height:20rpx; background:#dedede'></view>
+</view>
+
+
+</view>
+
+  <view class="loading" hidden="{{!searchLoading}}">
+  <view style='background-color: whitesmoke; height: 1px; margin-bottom:20px;'></view>
+  正在载入更多...
+  </view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">
+  已加载全部
+  </view> 

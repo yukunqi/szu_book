@@ -1,0 +1,126 @@
+<view class='page'>
+<scroll-view scroll-y="true" style='height:1100rpx;'>
+
+
+
+
+<view wx:for="{{blog}}" wx:key="{{item.id}}" id="{{item.id}}">
+<view class='main'>
+<view style='display:flex; width:100%'>
+<view class='user-avatar'><image src='{{item.avatarUrl}}'></image></view>
+<view class='name'>
+<text>{{item.nickName}}</text>
+<view class='time'><text>{{item.comment_time}}</text></view>
+</view>
+</view>
+
+<view class='list-item-body'>
+<view class='content'><text>{{item.content}}</text></view>
+<view class="list-item-body-images" wx:if="{{ item.link_books.length !== 0 }}">
+  <image
+    wx:for-item="book"
+    wx:for="{{ item.link_books }}"
+    wx:for-index="i"
+    id='{{i}}'
+    catchtap='BookDetail'
+    wx:key="{{ i }}"
+    src="{{ book.book_image }}"
+    class="list-item-body-image"
+    mode="aspectFill">
+  </image>
+</view>
+</view>
+
+<!-- Blog Operations -->
+<view class="list-item-operations" wx:if="{{ !isTest }}">
+  <view
+    catchtap='toCollect'
+    hover-class="list-item-operation-like-scale"
+    class="list-item-operation-like">
+    <image
+      class="list-item-operation-icon"
+      src="{{ like ? '../../icons/like-fill.svg' : '../../icons/like.svg' }}"></image>
+  </view>
+  <view
+    catchtap='sendBlogComment'
+    class="list-item-operation-comment">
+    <image class="list-item-operation-icon" src="../../icons/comment.svg"></image>
+  </view>
+  <view
+    class="list-item-operation-more"
+    wx:if="{{ item.isAdmin || item.isAuthor }}"
+    bindtap='showMore'>
+    <image
+      class="list-item-operation-icon"
+      src="../../icons/more.svg"></image>
+  </view>
+</view>
+
+</view>
+
+<view style='background:#dedede; height:20rpx;'></view>
+
+
+    <!-- comments -->
+    <view class="comments" wx:if="{{ !loading && !isTest }}">
+      <view class="comments-tabs">
+        <text class="comments-tabs-1">评论 {{ commentNum ? commentNum : '' }}</text>
+        <text class="comments-tabs-2">点赞 {{ likes_num ? likes_num : '' }}</text>
+      </view>
+      <view class="comments-list">
+        <view
+          class="comments-item"
+          wx:for="{{ comments }}"
+          wx:for-item="comment"
+          wx:for-index="i"
+          id='{{i}}'
+          catchtap='itemAction'
+          wx:key="{{ i }}">
+          <view class="comment-user-info">
+            <image src="{{ comment.author_avatar }}" class="comment-user-avatar"></image>
+          </view>
+          <view class="comment-info">
+            <text class="comment-nickname">{{ comment.author_name }}</text>
+            <text class="comment-content">{{ comment.content }}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+</view>
+</scroll-view>
+    <!-- comment -->
+    <view class="comment" wx:if="{{ !loading }}">
+      <input
+        class="comment-input"
+        type="text"
+        placeholder="{{ placeholder }}"
+        bindinput="input_content"
+        bindfocus="inputFocus"
+        bindblur="inputBlur"
+        bindconfirm="sendComment"
+        focus="{{ focusComment }}"
+        value="{{ inputContent }}"
+        confirm-type="send"
+        cursor-spacing="42"/>
+      <!-- <image
+        class="send-btn"
+        wx:if="{{ !disable }}"
+        bindtap="clearInput"
+        src="../../icons/send-fill.svg">
+      </image> -->
+      <view class="isanonymous" wx:if="{{ focusComment || !disable }}">
+        <view
+          class="isanonymous-btn {{ isAnonymous ? 'anonymous' : 'named' }}"
+          catchtap="anonymousChange">
+          <text class="anonymous-text">匿名</text>
+          <text class="named-text">实名</text>
+          <view class="isanonymous-btn-key"></view>
+        </view>
+      </view>
+    </view>
+
+
+
+</view>

@@ -1,0 +1,36 @@
+<view class="weui-footer" wx:if="{{array.length == 0}}">
+<view class='network_search' catchtap='network_search'>
+ 试试网络搜索结果吧~
+</view>
+
+</view>
+
+  <view wx:for="{{array}}" class='book_item' bindtap='book_page' wx:key="{{item.book_id}}" id='{{index}}'>
+    <view class='line'></view>
+    <view style="display:flex">
+        <view>
+        <image src="{{item.images.large}}" style="width: 70px; height: 90px;" mode='aspectFit'></image>
+        </view>
+        <view class='book_info'>
+        <view>
+        <text class='book_name'>{{item.title}}</text>
+        </view>
+        <view>
+        <text style='font-size : 0.8em;'>豆瓣评分：{{item.rating.average}}</text>
+        </view>
+        <view>
+        <text style='font-size : 0.8em;'>{{item.author[0]}} /{{item.pubdate}}/ {{item.publisher}}</text>
+        </view>
+        
+        </view>
+    </view>
+  </view>
+
+  <view class="loading" hidden="{{!searchLoading}}">
+  <view style='  background-color: whitesmoke; height: 1px; margin-bottom:20px;'></view>
+  正在载入更多...
+  </view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">
+  已加载全部
+  </view> 
+

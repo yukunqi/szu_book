@@ -1,0 +1,40 @@
+<view>
+
+<view class="mycontainer">
+  <view class="page {{ tab === 0 ? 'visible' : 'hide' }}">
+   <books id="b" ></books>
+  </view>
+  <view class="page {{ tab === 1 ? 'visible' : 'hide' }}" >
+    <discuss id="d"></discuss>
+  </view>
+  <view class="page {{ tab === 2 ? 'visible' : 'hide' }}">
+    <personal id="p"></personal>
+  </view>
+</view>
+
+<view class="tabs" wx:if="{{ showTabs }}">
+  <view class="tab" id='0' catchtap='switchTapTo'>
+    <image src="../../icons/Book_P.png" wx:if="{{ tab === 0 }}"></image>
+    <image src="../../icons/Book_N.png"      wx:else></image>
+  </view>
+
+  <view class="tab" id='1' catchtap='switchTapTo'>
+    <image src="../../icons/Discuss_P.png" wx:if="{{ tab === 1 }}"></image>
+    <image src="../../icons/Discuss_N.png"      wx:else></image>
+  </view>
+
+    <view class="tab" id='2' catchtap='switchTapTo'>
+    <image src="../../icons/Me_P.png" wx:if="{{ tab === 2 }}"></image>
+    <image src="../../icons/Me_N.png"      wx:else></image>
+    <view class="badge badge-number" wx:if="{{ unreadMessagesCount !== 0 }}">{{ unreadMessagesCount }}</view>
+  </view>
+
+</view>
+
+</view>  
+
+
+
+
+
+

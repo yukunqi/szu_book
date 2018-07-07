@@ -1,0 +1,36 @@
+<view class="weui-footer">
+<view class='network_search' catchtap='network_search'>
+ 找不到想要的书？试试这里~
+</view>
+
+</view>
+
+  <view wx:for="{{array}}" class='book_item' bindtap='book_page' wx:key="{{item.book_id}}" id='{{index}}'>
+    <view class='line'></view>
+    <view style="display:flex">
+        <view>
+        <image src="{{item.book_image}}" style="width: 70px; height: 90px;" mode='aspectFit'></image>
+        </view>
+        <view class='book_info'>
+        <view>
+        <text class='book_name'>{{item.book_name}}</text>
+        </view>
+        <view>
+        <text style='font-size : 0.8em;'>豆瓣评分：{{item.book_rate}}</text>
+        </view>
+        <view>
+        <text style='font-size : 0.8em;'>{{item.book_author}} /{{item.book_year}}/ {{item.publisher}}</text>
+        </view>
+        <view wx:if="{{item.label == 1}}" style='font-size : 0.8em; color:red'>入门推荐</view>
+        </view>
+    </view>
+  </view>
+
+  <view class="loading" hidden="{{!searchLoading}}">
+  <view style='  background-color: whitesmoke; height: 1px; margin-bottom:20px;'></view>
+  正在载入更多...
+  </view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">
+  已加载全部
+  </view> 
+

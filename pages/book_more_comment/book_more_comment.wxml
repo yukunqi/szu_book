@@ -1,0 +1,52 @@
+
+<view class="nav-1">
+<scroll-view scroll-x="true" class="navbar" scroll-left="{{scrollLeftValue}}">  
+  <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>  
+</scroll-view> 
+</view>
+
+<view wx:for="{{navbar}}" data-idx="{{index}}"wx:key="unique">
+<view hidden="{{currentTab!==index}}"> 
+
+<view class='comment'>
+<view class='line'></view>
+<view style='display:flex;'>
+<view style='margin-left:40rpx; margin-top:40rpx;'><text>短评</text></view>
+</view>
+
+<view style='height:20rpx;'></view>
+
+<view class='main' wx:for="{{comment_people}}" wx:key="{{item.id}}">
+
+<view style='display:flex; width:100%'>
+<view><image src='{{item.avatarUrl}}'></image></view>
+<view class='name'><text>{{item.nickName}}</text></view>
+<view class='like' hover-class='item-operation-like-scale' id='{{index}}' bindtap="toCollect">
+<image src="{{item.like?'../../icons/like-fill.svg':'../../icons/like.svg'}}">
+</image>
+<text class="number {{ item.like ? 'active' : '' }}"  wx:if="{{ item.likes_num !== 0 }}">{{item.likes_num}}</text>
+</view>
+</view>
+
+<view class='content'><text>{{item.content}}</text></view>
+<view class='time'><text>{{item.comment_time}}</text></view>
+
+<view style='height:60rpx;'></view>
+</view>
+</view>
+
+  <view class="loading" hidden="{{!searchLoading}}">
+  <view style='background-color: whitesmoke; height: 1px; margin-bottom:20px;'></view>
+  正在载入更多...
+  </view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">
+  已加载全部
+  </view> 
+
+
+</view>
+</view>
+
+
+
+

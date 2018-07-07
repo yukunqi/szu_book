@@ -1,0 +1,188 @@
+@import '../../weui.wxss';
+
+
+.book_image{
+  width: 100%;
+  height: 600rpx;
+  background-color: white
+}
+
+.book_image image{
+  width: 400rpx;
+  height: 520rpx;
+  margin: 40rpx 175rpx;
+}
+
+.book_info{
+  margin-top: 60rpx;
+  margin-left: 60rpx;
+  width: 50%;
+  min-height: 100rpx;
+}
+
+.book_info .title{
+  margin-bottom: 30rpx;
+  font-size: 1.3rem;
+}
+
+.book_info .smaller{
+  font-size: 0.8rem;
+  color: grey;
+  word-break: break-all
+}
+
+
+ .tagList{
+  margin-top: 40rpx;
+  padding-left: 60rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ .tagList .it{
+    width: auto;
+    word-break: keep-all;
+    white-space: nowrap;
+    background-color: #f5f5f5;
+    color: #37A;
+    font-size: 1rem;
+    padding: 15rpx 15rpx 15rpx;
+    display: inline-block;
+    margin: 0 15rpx 30rpx 0;
+    line-height: 1rem;
+}
+
+
+
+
+.score{
+  width: 50%;
+  min-height: 100rpx;
+  margin-top: 100rpx;
+}
+
+.score .block{
+  width: 150rpx;
+  height: 150rpx;
+  border-style: outset;
+  border-color: #c1c1c1;
+  border-width: 0.1rem;
+  margin: 0 auto;
+  padding: 20rpx 20rpx 10rpx;
+}
+
+.score .classification {
+  width: 150rpx;
+  height: 150rpx;
+  padding: 20rpx 20rpx 10rpx 50rpx;
+  margin: 20rpx auto;
+}
+
+.score .classification image{
+ width: 100rpx;
+ height: 100rpx;
+}
+
+
+.score .block .smaller{
+  font-size: 0.8rem;
+  color: grey;
+  text-align: center;
+}
+
+.book_exchange{
+  height: 200rpx;
+  margin-top: 20rpx;
+}
+
+.comment{
+  width: 100%;
+}
+
+.comment .more{
+  height:80rpx; 
+  text-align:center;
+  color: green;
+}
+
+.comment .line{
+  background-color: #dedede;
+  height: 10rpx;
+}
+
+
+
+.comment .main{
+  width: 90%;
+  min-height: 100rpx;
+}
+
+.comment .main image{
+  width: 80rpx;
+  height: 80rpx;
+  border: 0 solid #ff0000;
+  border-radius: 100rpx;
+  margin-left:40rpx;
+}
+
+.comment .main .name{
+  margin-left: 30rpx;
+  width: 50%;
+  word-break: break-all;
+}
+
+.comment .main .content{
+  margin-left: 150rpx;
+  word-break: break-all;
+  width: 60%;
+  font-size: 16px;
+  line-height: 28px;
+  color: #333;
+  text-align: justify;
+}
+
+.comment .main .time{
+  margin-top: 20rpx;
+  margin-left: 150rpx;
+}
+
+.comment .main .like{
+  display: flex;
+
+}
+
+.item-operation-like-scale{
+  animation: clickAnimation 300ms ease;
+}
+
+.comment .main .like .number{ 
+  margin-left: 8px;
+  color: #999;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: bold;
+}
+
+ .comment .main .like .number .active {
+     color: #FA6570;
+}
+.comment .main .like image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

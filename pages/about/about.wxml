@@ -1,0 +1,21 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">书屋简介</view>
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.1 书屋特色</view>
+                    <view class="weui-article__p">
+                       书屋首页的书籍分类采用机器学习技术，对书籍在网络上的评论数据进行分析并对书籍进行预测，帮助用户寻找自己想要了解领域的入门书籍。用户可以通过扫码识别图书，把图书加入系统中进行分析和预测，来了解手中的图书情况。书屋的“书籍仓库”将由你们来打造。
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.2 书屋使命</view>
+                    <view class="weui-article__p">
+                       书屋开发的目标和意义就是为了解决用户无法高效了解书籍是否值得入门阅读的烦恼，让用户在初学阶段能够得到更好的帮助。另外平台提高书籍的分享和交流，用户可以在平台发帖讨论书籍，任何和书籍有关的问题在这里都能找到答案。祝愿每一位用户能在这里得到服务。
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

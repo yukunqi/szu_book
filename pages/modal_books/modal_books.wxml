@@ -1,0 +1,86 @@
+<view>
+<button class='newBtn' hover-class="newBtn-hover" bindtap='scanCode'>
+<image class='newBtn-icon' src='../../icons/scan.svg'></image>
+</button>
+</view>
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" 
+                    class="weui-search-bar__input" 
+                    placeholder="搜索" 
+                    value="{{search_inputVal}}" 
+                    focus="{{search_inputShowed}}" 
+                    bindinput="inputTyping"
+                    confirm-type="search"
+                    bindblur='hideInput'
+                    bindconfirm="searchBook"/>
+                    <view class="weui-icon-clear" wx:if="{{search_inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{search_inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!search_inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        </view>
+
+
+<view class="nav-1">
+<scroll-view scroll-x="true" class="navbar" scroll-left="{{scrollLeftValue}}">  
+  <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>  
+</scroll-view> 
+</view>
+
+
+
+
+
+<view wx:for="{{navbar}}" data-idx="{{index}}"wx:key="unique">
+  
+  <!--首页-->  
+  <view hidden="{{currentTab!==index}}">  
+  <view wx:for="{{array}}" class='book_item' bindtap='book_page' wx:key="{{item.book_id}}" id='{{index}}'>
+    <view class='line'></view>
+    <view style="display:flex">
+        <view>
+        <image src="{{item.book_image}}" style="width: 70px; height: 90px;" mode='aspectFit'></image>
+        </view>
+        <view class='book_info'>
+        <view>
+        <text class='book_name'>{{item.book_name}}</text>
+        </view>
+        <view>
+        <text style='font-size : 0.8em;'>豆瓣评分：{{item.book_rate}}</text>
+        </view>
+        <view>
+        <text style='font-size : 0.8em;'>{{item.book_author}} /{{item.book_year}}/ {{item.publisher}}</text>
+        </view>
+        <view wx:if="{{item.label == 1}}" style='font-size : 0.8em; color:red'>入门推荐</view>
+        </view>
+    </view>
+  </view>
+
+  <view class="loading" hidden="{{!searchLoading}}">
+  <view style='  background-color: whitesmoke; height: 1px; margin-bottom:20px;'></view>
+  正在载入更多...
+  </view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">
+  已加载全部
+  </view> 
+  </view> 
+
+
+
+</view>  
+
+
+
+
+
+

@@ -1,0 +1,174 @@
+/* pages/book_more_comment/book_more_comment.wxss */
+
+.loading{  
+  padding: 10rpx;  
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+  color: #333;
+}  
+.loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+  background-image: url(../../icons/loading1.png) no-repeat;  
+  background-size: contain;  
+  animation: rotate 1s linear infinite;  
+}  
+.loading.complete:before{  
+  display: none;  
+}  
+
+
+
+.nav-1{  
+  flex: none;  
+  display: flex;   
+  background: #fff;  
+  background-color: RGB(247, 247, 247);
+  height: 80rpx;
+}
+
+.navbar{  
+  display:flex;
+  background: #fff; 
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 0 0 100%; 
+}  
+.navbar .item{  
+  position: relative;   
+  text-align: center;  
+  font-size: 30rpx;
+  line-height: 80rpx;  
+  color: gray;
+  width: 50%;
+  display: inline-block;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}  
+.navbar .item.active{  
+  color: #FFCC00;  
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: #FFCC00;  
+}  
+
+.comment{
+  width: 100%;
+}
+
+
+.comment .line{
+  background-color: whitesmoke;
+  height: 1px;
+}
+
+
+
+  .comments .comments-list {
+    width: 100%;
+}
+
+  .comments .comments-list .comments-item {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #EEE;
+    background: #FFF;
+}
+
+.comments .comments-list .unread {
+    opacity: 0.6;
+}
+
+
+
+  .comments .comments-list .comments-item .comment-user-info {
+float: left;
+width: 20%;
+height: 60px;
+text-align: center;
+
+}
+
+
+  .comments .comments-list .comments-item .comment-user-info .comment-user-avatar {
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 50%;
+}
+
+ .comments .comments-list .comments-item .comment-delete {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0;
+}
+  .comments .comments-list .comments-item .comment-info {
+  float: left;
+  width: 75%;
+  padding: 10px 10px 10px 0;
+  word-break: break-all;
+}
+
+  .comments .comments-list .comments-item .comment-info  .comment-nickname {
+      color: #333;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 24px;
+      display: block;
+    }
+  .comments .comments-list .comments-item .comment-info  .comment-content {
+      color: #666;
+      font-size: 13px;
+      line-height: 18px;
+      display: block;
+
+    }
+
+
+
+.operations {
+float: left;
+width: 100%;
+background: #FFF;
+margin-bottom: 1px;
+overflow: hidden;
+}
+
+.operations .operation {
+  float: left;
+  
+}
+
+.operations .operation image {
+      width: 20px;
+      height: 80rpx;
+      margin-right: 5px;
+      vertical-align: middle;
+}
+
+.operations .operation text {
+  color: #555;
+  font-size: 14px;
+  line-height: 80rpx;
+}
+
+.operations .markAllRead {
+  width: 70%;
+}
+
+.operations .refresh {
+  width: 30%;
+
+}

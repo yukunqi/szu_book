@@ -1,0 +1,8 @@
+{
+  "usingComponents":{
+    "books":"../modal_books/modal_books",
+    "discuss":"../modal_discuss/modal_discuss",
+    "personal":"../modal_personal/modal_personal"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,137 @@
+  <view class="new">
+    <textarea
+      class="textarea"
+      auto-focus
+      bindinput="input_content"
+      maxlength="5000"
+      value='{{content}}'
+      placeholder="写下你对书的想法和感受吧~"
+      placeholder-style="color: #999;">
+    </textarea>
+
+
+    <view class="image-list">
+      <!-- preview the image which already be choosed -->
+      <view
+        class="choosed-image-list"
+        wx:for="{{ book_arr }}"
+        wx:for-item="book"
+        wx:for-index="idx"
+        wx:key="{{ idx }}">
+        <image
+          src="{{ book.book_image }}"
+          mode="aspectFill"
+          bindtap='bookDetail'
+          id='{{idx}}'
+          class="choosed-image"></image>
+        <view
+          class="choosed-image-delete-btn"
+          bindtap='deleteImage' id='{{idx}}'>
+          <image
+            class="choosed-image-delete-btn-icon"
+            src="../../icons/delete_photo.svg"></image>
+        </view>
+      </view>
+      <!-- image choosing btn -->
+      <view
+        class="choose-image-btn"
+        wx:if="{{ book_arr.length < 9 }}"
+        bindtap="showModal">
+        <image
+          class="choose-image-btn-icon"
+          src="../../icons/choose-image.svg">
+        </image>
+      </view>
+    </view>
+
+
+    <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+
+    
+<view animation="{{animationData}}" class="searchBook" wx:if="{{showModalStatus}}">
+
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" 
+                    class="weui-search-bar__input" 
+                    placeholder="搜索" 
+                    value="{{search_inputVal}}" 
+                    focus="{{search_inputShowed}}" 
+                    bindinput="inputTyping"
+                    confirm-type="search"
+                    bindblur='hideInput'
+                    bindconfirm="searchBook"/>
+                    <view class="weui-icon-clear" wx:if="{{search_inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{search_inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!search_inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        </view>
+
+<scroll-view scroll-y="true" style='height:500rpx;' bindscrolltolower="reachBottom">
+  <view wx:for="{{search_result}}" class='book_item' bindtap='addBook' wx:key="{{item.book_id}}" id='{{index}}'>
+    <view class='line'></view>
+    <view style="display:flex">
+        <view>
+        <image src="{{item.book_image}}" style="width: 70px; height: 90px;" mode='aspectFit'></image>
+        </view>
+        <view class='book_info'>
+        <view>
+        <text class='book_name'>{{item.book_name}}</text>
+        </view>
+        <view>
+        <text style='font-size : 0.8em;'>豆瓣评分：{{item.book_rate}}</text>
+        </view>
+        <view>
+        <text style='font-size : 0.8em;'>{{item.book_author}} /{{item.book_year}}/ {{item.publisher}}</text>
+        </view>
+        <view wx:if="{{item.label == 1}}" style='font-size : 0.8em; color:red'>入门推荐</view>
+        </view>
+    </view>
+  </view>
+</scroll-view>
+
+
+  <view class="loading" hidden="{{!searchLoading}}">
+  <view style='  background-color: whitesmoke; height: 1px; margin-bottom:20px;'></view>
+  正在载入更多...
+  </view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">
+  已加载全部
+  </view> 
+
+
+
+
+</view>
+
+
+    <view class="isanonymous">
+      <view
+        class="isanonymous-btn {{ isAnonymous ? 'anonymous' : 'named' }}"
+        bindtap="anonymousChange">
+        <text class="anonymous-text">匿名</text>
+        <text class="named-text">实名</text>
+        <view class="isanonymous-btn-key"></view>
+      </view>
+    </view>
+    <view class="submit-btn">
+      <button
+        type="primary"
+        size="default"
+        bindtap="send"
+        class="submit"
+        disabled="{{ disabled }}">
+        发送
+      </button>
+    </view>
+  </view>

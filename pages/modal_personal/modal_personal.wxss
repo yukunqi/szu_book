@@ -1,0 +1,49 @@
+/* pages/personal/personal.wxss */
+@import '../../weui.wxss';
+
+.user {
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+
+.user   .userinfo {
+float: left;
+width: 100%;
+height: 150px;
+padding: 30px 10px;
+background: #59adff;
+}
+
+.user   .userinfo   .avatar {
+float: left;
+width: 100%;
+text-align: center;
+
+}
+
+
+.user   .userinfo   .avatar       .avatar-image {
+width: 70px;
+height: 70px;
+border-radius: 10px;
+}
+
+
+.user   .userinfo  .nickname {
+float: left;
+width: 100%;
+text-align: center;
+}
+
+.user   .userinfo  .nickname     text {
+color: #FFF;
+font-size: 20px;
+line-height: 40px;
+font-weight: bold;
+}
+
+.line{
+  height:20rpx; 
+  background:#dedede;
+}

@@ -1,0 +1,145 @@
+@import '../../weui.wxss';
+
+.comment{
+  width: 100%;
+}
+
+.comment .more{
+  height:80rpx; 
+  text-align:center;
+  color: green;
+}
+
+.comment .line{
+  background-color: #dedede;
+  height: 10rpx;
+}
+
+
+
+.comment .main{
+  width: 100%;
+  min-height: 100rpx;
+  margin-top: 60rpx;
+}
+
+.comment .main image{
+  width: 80rpx;
+  height: 80rpx;
+  border: 0 solid #ff0000;
+  border-radius: 100rpx;
+  margin-right:20rpx;
+}
+
+.comment .main .name{
+  margin-left: 30rpx;
+  width: 50%;
+  word-break: break-all;
+}
+
+.comment .main .content{
+  margin-left: 150rpx;
+  word-break: break-all;
+  width: 60%;
+  font-size: 16px;
+  line-height: 28px;
+  color: #333;
+  text-align: justify;
+}
+
+.comment .main .book_info{
+  width: 75%;
+  height: 150rpx;
+  margin-left: 150rpx;
+  border-style: solid;
+  border-width: 0.05rem;
+  border-color: grey;
+}
+
+.comment .main .book_info .photo image{
+  border-radius: 0rpx;
+  width: 80rpx;
+  height: 110rpx;
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+}
+
+.comment .main .book_info_content{
+  font-size: 0.8rem;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  color: gray;
+}
+
+.comment .main .time{
+  margin-top: 20rpx;
+  margin-left: 150rpx;
+}
+
+
+.comment .main .delete image{
+  float: right;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.comment .main .like{
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.item-operation-like-scale{
+  animation: clickAnimation 300ms ease;
+}
+
+.comment .main .like .number{ 
+  margin-right: 50rpx;
+  color: #999;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: bold;
+}
+
+ .comment .main .like .number .active {
+     color: #FA6570;
+}
+.comment .main .like image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.loading{  
+  padding: 10rpx;  
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+  color: #333;
+}  
+.loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+  background-image: url(../../icons/loading1.png) no-repeat;  
+  background-size: contain;  
+  animation: rotate 1s linear infinite;  
+}  
+.loading.complete:before{  
+  display: none;  
+}  
+
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

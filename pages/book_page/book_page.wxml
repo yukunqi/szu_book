@@ -1,0 +1,70 @@
+<view class='book_image'>
+<image src='{{book_image}}'></image>
+</view>
+
+<view style='display:flex;'>
+<view class='book_info'>
+<view class='title'><text>{{book_title}}</text></view>
+<view class='smaller'><text>作者: {{book_author}}</text></view>
+<view class='smaller'><text>出版社: {{book_publisher}}</text></view>
+<view class='smaller'><text>出版时间: {{publish_time}}</text></view>
+<view class='smaller'><text>ISBN: {{ISBN}}</text></view>
+</view>
+<view class='score'>
+<view class='block'>
+<view class='smaller'><text>豆瓣评分</text></view>
+<view style='text-align: center; color:black font-weight:bolder'><text>{{book_rate}}</text></view>
+<view class='smaller'><text>{{rate_people}}人</text></view>
+</view>
+<view class='classification'>
+<image wx:if='{{machine_label == 1}}' src='../../icons/recommend.svg'></image>
+<image wx:elif='{{machine_label == 2}}' src='../../icons/difficult.svg'></image>
+</view>
+</view>
+</view>
+
+<view class='tagList'>
+<view wx:for="{{tags}}" catchtap='tagSearch' id='{{index}}'>
+<view class="it">{{item}}</view>
+</view>
+</view>
+
+<view class='book_exchange'>
+
+</view>
+
+<view class='comment' wx:if="{{show_comment}}">
+<view class='line'></view>
+<view style='display:flex;'>
+<view style='margin-left:40rpx; margin-top:40rpx;'><text>短评</text></view>
+<view style='width:60%;'></view>
+<view style='margin-top:40rpx;'><button class="weui-btn mini-btn" type="primary" size="mini" plain='true' bindtap='writeComment'>写短评</button></view>
+</view>
+
+<view style='height:20rpx;'></view>
+
+<view class='main' wx:for="{{comment_people}}" wx:key="{{item.id}}">
+
+<view style='display:flex;'>
+<view><image src='{{item.avatarUrl}}'></image></view>
+<view class='name'><text>{{item.nickName}}</text></view>
+<view style='width:40%;'></view>
+<view class='like' hover-class='item-operation-like-scale' id='{{index}}' bindtap="toCollect">
+<image src="{{item.like?'../../icons/like-fill.svg':'../../icons/like.svg'}}">
+</image>
+<text class="number {{ item.like ? 'active' : '' }}" wx:if="{{ item.likes_num !== 0 }}">{{item.likes_num}}</text>
+</view>
+</view>
+
+<view class='content'><text>{{item.content}}</text></view>
+<view class='time'><text>{{item.comment_time}}</text></view>
+
+<view style='height:60rpx;'></view>
+</view>
+
+<view class='more' bindtap="getmoreComment">全部评论{{total_comment_count}}条</view>
+</view>
+
+
+
+

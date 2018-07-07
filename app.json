@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/template/template",
+    "pages/search_book/search_book",
+    "pages/network_search_book/network_search_book",
+    "pages/book_page/book_page",
+    "pages/my_message/my_message",
+    "pages/detail/detail",
+    "pages/new/new",
+    "pages/write_comment/write_comment",
+    "pages/scan_book/scan_book",
+    "pages/my_comment/my_comment",
+    "pages/index/index",
+    "pages/book_more_comment/book_more_comment",
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/my_blog/my_blog"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#59adff",
+    "navigationBarTitleText": "深大书屋",
+    "navigationBarTextStyle":"white",
+    "backgroundColor":"#dedede"
+  }
+}
+
+ 

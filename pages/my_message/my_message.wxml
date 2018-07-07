@@ -1,0 +1,63 @@
+
+<view class="nav-1">
+<scroll-view scroll-x="true" class="navbar" scroll-left="{{scrollLeftValue}}">  
+  <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>  
+</scroll-view> 
+</view>
+
+<view class="operations" wx:if="{{currentTab == 0}}">
+  <view class="operation markAllRead" disabled="true" catchtap='markAllread'>
+    <image src="../../icons/read.svg"></image>
+    <text>全部标为已读</text>
+  </view>
+</view>
+
+
+<view wx:for="{{navbar}}" data-idx="{{index}}"wx:key="unique">
+<view hidden="{{currentTab!==index}}"> 
+
+<view class='comments'>
+<view class='line'></view>
+
+
+<view style='height:60rpx;'></view>
+
+<view class="comments-list">
+  <view
+    class="comments-item {{comment.read_status == 0 && currentTab == 0  ? 'unread' : '' }}"
+    wx:for="{{ comments }}"
+    wx:for-item="comment"
+    wx:for-index="i"
+    id='{{i}}'
+    catchtap='move_blog'
+    wx:key="{{ i }}">
+    <view class="comment-user-info">
+      <image src="{{ comment.author_avatar }}" class="comment-user-avatar"></image>
+    </view>
+    <view class="comment-info">
+      <text class="comment-nickname">{{ comment.author_name }}</text>
+      <text class="comment-content">{{ comment.content }}</text>
+    </view>
+    <view wx:if="{{currentTab == 1}}" catchtap='delete_message' id='{{i}}'>
+      <image src='../../icons/delete.svg' class='comment-delete'></image>
+    </view>
+  </view>
+</view>
+
+</view>
+
+  <view class="loading" hidden="{{!searchLoading}}">
+  <view style='background-color: whitesmoke; height: 1px; margin-bottom:20px;'></view>
+  正在载入更多...
+  </view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">
+  已加载全部
+  </view> 
+
+
+</view>
+</view>
+
+
+
+

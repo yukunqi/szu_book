@@ -1,0 +1,29 @@
+
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <textarea 
+            class="weui-textarea" 
+            placeholder="请输入文本" 
+            style="height: 5.3em" 
+            bindinput="input_content" 
+            maxlength="{{limit_content_num}}"
+            focus="{{ focusComment }}"
+            auto-focus='true'
+            value="{{content}}"
+            />
+            <view class="weui-textarea-counter">
+            {{content_num}}/{{limit_content_num}}
+            </view>
+        </view>
+    </view>
+</view>
+<view style='height:20rpx;'></view>
+    <view class="isanonymous">
+      <view class="isanonymous-btn {{ isAnonymous ? 'anonymous' : 'named' }}" bindtap='anonymousChange'>
+        <text class="anonymous-text">匿名</text>
+        <text class="named-text">实名</text>
+        <view class="isanonymous-btn-key"></view>
+      </view>
+    </view>
+ <button class="weui-btn" style='background:#59adff' type="primary" disabled="{{ disabled }}" bindtap='send_comment'>发送</button>

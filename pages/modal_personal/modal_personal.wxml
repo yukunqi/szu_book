@@ -1,0 +1,26 @@
+  <view class="user">
+    <view class="userinfo">
+      <view class="avatar">
+        <image src="{{ userinfo.avatarUrl }}" class="avatar-image"></image>
+      </view>
+      <view class="nickname">
+        <text>{{ userinfo.nickName }}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+      <view class="page__bd">
+        <view class="weui-grids">
+            <block wx:for="{{grids}}" wx:key="{{index}}">
+                <view data-url="{{item.url}}" 
+                class="weui-grid" 
+                hover-class="weui-grid_active"
+                catchtap='navigate'>
+                    <image class="weui-grid__icon" src="{{item.icons}}" />
+                    <view class="weui-grid__label">{{item.name}}</view>
+                </view>
+            </block>
+        </view>
+    </view>

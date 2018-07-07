@@ -1,0 +1,361 @@
+
+
+.page{
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+
+.page .line{
+  background-color: whitesmoke;
+  height: 1px;
+}
+
+
+
+.page .main{
+    width: 100%;
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    background: #FFF;
+    overflow: hidden;
+}
+
+.page .main .name{
+  float: left;
+    padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #333;
+  margin-left: 20rpx;
+
+}
+
+.page .main .time{
+  width: 100%;
+  margin-top: 2rpx;
+  font-size: 0.8rem;
+  color: #777;
+  display: block;
+}
+
+.page .main .user-avatar image{
+  margin-left: 15px;
+  margin-top: 15px;
+  width: 80rpx;
+  height: 80rpx;
+  border: 0 solid #ff0000;
+  border-radius: 100rpx;
+}
+
+
+
+
+.page .main .list-item-body{
+  width: 100%;
+  margin-left: 15px;
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.page .main .list-item-body .content{
+    float: left;
+    width: 90%;
+    font-size: 16px;
+    line-height: 28px;
+    color: #333;
+    text-align: justify;
+}
+
+.page .main .list-item-body .list-item-body-images{
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.page .main .list-item-body .list-item-body-images .list-item-body-image{
+    float: left;
+    width: 30%;
+    margin-right: 5px;
+    margin-top: 5px;
+    height: 110px;
+}
+
+
+
+.page .main .list-item-operations {
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 15px;
+      border-top: 1px solid #EEE;
+      overflow: hidden;
+}
+
+.page .main .list-item-operations  .list-item-operation-like{
+    float: left;
+    width: 70px;
+    position: relative;
+    text-align: center;
+}
+
+.page .main .list-item-operations  .list-item-operation-like        .list-item-operation-icon {
+          margin-right: 5px;
+          width: 20px;
+          height: 20px;
+}
+
+
+.page .main .list-item-operations  .list-item-operation-like .number {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: 12px;
+    color: #999;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: bold;
+}
+
+.page .main .list-item-operations  .list-item-operation-like .active {
+    color: #59adff;
+}
+
+.page .main .list-item-operations  .list-item-operation-comment{
+    float: left;
+    width: 70px;
+    position: relative;
+    text-align: center;
+}
+
+.page .main .list-item-operations  .list-item-operation-comment .list-item-operation-icon {
+          margin-right: 5px;
+          width: 20px;
+          height: 20px;
+}
+
+.page .main .list-item-operations  .list-item-operation-comment  .number {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: 12px;
+    color: #999;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: bold;
+}
+
+
+.page .main .list-item-operations .list-item-operation-more{
+    float: left;
+    width: 70px;
+    position: relative;
+    text-align: center;
+}
+
+.page .main .list-item-operations .list-item-operation-more .list-item-operation-icon {
+          margin-right: 5px;
+          width: 20px;
+          height: 20px;
+}
+
+
+.page .main .list-item-operations .item-operation-like-scale{
+  animation: clickAnimation 300ms ease;
+}
+
+.page .main .list-item-operations  .list-item-operation-more {
+        float: right;
+        text-align: center;
+}
+
+
+.page   .comments {
+    margin-top: 10px;
+    width: 100%;
+    background: #FFF;
+    overflow: hidden;
+}
+
+.page .comments .comments-tabs {
+      width: 100%;
+      height: 40px;
+      padding: 0 20px;
+      overflow: hidden;
+      display: flex;
+}
+
+.page .comments .comments-tabs  text {
+        color: #777;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 40px;
+}
+
+.page .comments .comments-tabs      .comments-tabs-1 {
+        float: left;
+        color: #FA6570;
+        flex: 1;
+}
+ .page .comments .comments-tabs     .comments-tabs-2 {
+        float: right;
+        color: #59adff;
+        flex: 1;
+}
+
+.page .comments .comments-list {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.page .comments .comments-list .comments-item {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #EEE;
+    background: #FFF;
+}
+
+
+.page .comments .comments-list .comments-item .comment-user-info {
+float: left;
+width: 20%;
+height: 60px;
+text-align: center;
+
+}
+
+
+.page .comments .comments-list .comments-item .comment-user-info .comment-user-avatar {
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 50%;
+}
+
+
+.page .comments .comments-list .comments-item .comment-info {
+  float: left;
+  width: 75%;
+  padding: 10px 10px 10px 0;
+  word-break: break-all;
+}
+
+.page .comments .comments-list .comments-item .comment-info  .comment-nickname {
+      color: #333;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 24px;
+      display: block;
+    }
+.page .comments .comments-list .comments-item .comment-info  .comment-content {
+      color: #666;
+      font-size: 13px;
+      line-height: 18px;
+      display: block;
+
+    }
+
+
+.page .comment {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #FFF;
+    border-top: 1px solid #DDD;
+}
+
+.page .comment .comment-input {
+      width: 80%;
+      padding: 15px;
+      padding-right: 60px;
+      min-height: 20px;
+      max-height: 100px;
+      font-size: 15px;
+      color: #333;
+      line-height: 20px;
+      border-bottom: 1px solid #EEE;
+}
+
+.page .comment .send-btn {
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      width: 34px;
+      height: 34px;
+}
+
+.page .comment .isanonymous {
+      background: #FFF;
+      padding: 5px;
+      overflow: hidden;
+ }
+
+
+ .page .comment .isanonymous .isanonymous-btn {
+        position: relative;
+        float: left;
+        width: 55px;
+        height: 32px;
+        padding: 0 6px;
+        border-radius: 18px;
+        transition: all 300ms ease;
+ }
+
+
+  .page .comment .isanonymous .isanonymous-btn  text {
+          color: #FFF;
+          font-size: 12px;
+          line-height: 32px;
+        }
+ .page .comment .isanonymous .isanonymous-btn  .anonymous-text {
+          float: left;
+        }
+ .page .comment .isanonymous .isanonymous-btn  .named-text {
+          float: right;
+        }
+
+
+ .page .comment .isanonymous .isanonymous-btn  .isanonymous-btn-key {
+          position: absolute;
+          left: 1px;
+          top: 1px;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: #FFF;
+          box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+          transition: all 300ms ease;
+}
+
+  .page .comment .isanonymous  .anonymous {
+        background: #FA6570;
+  }
+
+.page .comment .isanonymous .anonymous  .isanonymous-btn-key {
+          transform: translateX(34px);
+}
+
+.page .comment .isanonymous  .named {
+        background: #2ECC71;
+ }
+
+
+.page .comment .isanonymous .named .isanonymous-btn-key {
+          transform: translateX(0);
+ }
+
+
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
